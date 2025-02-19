@@ -19,44 +19,52 @@ public class UserService {
     UserRepo userRepo;
 
     @Autowired
+    JwtService jwtService;
+
+    @Autowired
     private AuthenticationManager authenticationManager;
 
     private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 
-    public boolean checkUsernameDoesNotExists(String username){
-        return (userRepo.findByUsername(username)==null);
+    public boolean checkUsernameDoesNotExists(String username) {
+        return (userRepo.findByUsername(username) == null);
     }
 
-    public void createUser(Users user){
+    public void createUser(Users user) {
         user.setPassword(encoder.encode(user.getPassword()));
         userRepo.save(user);
     }
 
-    public List<Users> getUsers(){
+    public List<Users> getUsers() {
         return userRepo.findAll();
     }
 
-    public boolean deleteUser(int id){
+    public boolean deleteUser(int id) {
         var userOptional = userRepo.findById(id);
-        userOptional.ifPresentOrElse(user->userRepo.delete(user),()->{throw new RuntimeException("User not found");});
+        userOptional.ifPresentOrElse(user -> userRepo.delete(user), () -> {
+            throw new RuntimeException("User not found");
+        });
         return userOptional.isPresent();
     }
 
-    public Optional<Users> getUserById(int id){
+    public Optional<Users> getUserById(int id) {
         return userRepo.findById(id);
     }
 
-    public boolean deleteUserByName(String username){
+    public boolean deleteUserByName(String username) {
         var user = userRepo.findByUsername(username);
-        if(user!=null){
+        if (user != null) {
             userRepo.deleteByUsername(username);
             return true;
         }
         return false;
     }
 
-    public boolean verify(Users user) {
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(),user.getPassword()));
-        return authentication.isAuthenticated();
+    public String verify(Users user) {
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+        if (authentication.isAuthenticated()) {
+            return jwtService.getJwtToken(user.getUsername());
+        }
+        return null;
     }
 }
