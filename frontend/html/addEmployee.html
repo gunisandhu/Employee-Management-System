@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav-bar">
+            <button id="openNav" class="open-nav-button" onclick="toggleNav()">&#9776;</button>
+            <!-- <img class="logo-image" src="..\images\Employee Management.png" alt="Employee image"> -->
+            <input type="text" name="search" id="search" placeholder="Search" class="search-bar">
+            <a href="index.html">Signout</a>
+        </div>
+        <div class="below-nav-bar">
+            <div class="side-bar" id="side">
+                <a href="home.html" class="nav-item">
+                    <span class="fa fa-home"></span>
+                    <span class="menu-text">Home</span>
+                </a>
+                <a href="#teams" class="nav-item active">
+                    <span class="icon">👥</span>
+                    <span class="menu-text">Teams</span>
+                </a>
+                <a href="addDepartment.html" class="nav-item">
+                    <span class="icon">🏢</span>
+                    <span class="menu-text">Create Department</span>
+                </a>
+            </div>
+            <div class="add-section">
+                <div class="addEmployeeForm">
+                    <p class="form-heading">Employee Details</p>
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label for="fname">First Name:</label>
+                            <input type="text" id="fname" name="first_name" required />
+
+                            <label for="lname">Last Name:</label>
+                            <input type="text" id="lname" name="last_name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required />
+                            <label for="mobile">Mobile:</label>
+                            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" maxlength="10" required />
+                        </div>
+                        <div class="form-group">
+                            <div id="address-container">
+                                <label for="address">Address:</label>
+                                <input type="text" id="address" name="address" placeholder="Enter full address here..."
+                                    style="width:100%" />
+                                <ul id="suggestions"></ul>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="street">Street Address:</label>
+                            <input type="text" id="street" name="street" required />
+                            <label for="city">City:</label>
+                            <input type="text" id="city" name="city" required />
+
+                        </div>
+                        <div class="form-group">
+                            <label for="pincode">PinCode:</label>
+                            <input type="text" id="pincode" name="pincode" required />
+                            <label for="state">State:</label>
+                            <input type="text" id="state" name="state" required />
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="multiSelectdepartment">Assign Department:</label>
+                            <div class="custom-dropdown" onclick="toggleDropdownDept()">
+                                <span class="selected-text">Select one</span>
+                                <select id="multiSelectdepartment" multiple class="dropdown-list"
+                                    onchange="updateDeptPlaceholder()">
+                                    <option value="1">Project Alpha</option>
+                                    <option value="2">Project Beta</option>
+                                    <option value="3">Project Gamma</option>
+                                    <option value="4">Project Delta</option>
+                                    <option value="5">Project Epsilon</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <p class="button">
+                            <button type="submit">Add Employee</button>
+                        </p>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+        <footer class="login_footer">
+            <p>Copyright &copy</p>
+        </footer>
+
+    </div>
+    <script src="../javascript/script.js"></script>
+</body>
+
+</html>

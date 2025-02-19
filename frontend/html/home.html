@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav-bar">
+            <button id="openNav" class="open-nav-button" onclick="toggleNav()">&#9776;</button>
+            <!-- <img class="logo-image" src="..\images\Employee Management.png" alt="Employee image"> -->
+            <input type="text" name="search" id="search" placeholder="Search" class="search-bar">
+            <a href="index.html">Signout</a>
+        </div>
+        <div class="below-nav-bar">
+            <div class="side-bar" id="side">
+                <a href="#teams" class="nav-item active">
+                    <span class="icon">👥</span>
+                    <span class="menu-text">Teams</span>
+                </a>
+                <a href="addEmployee.html" class="nav-item">
+                    <span class="icon">➕</span>
+                    <span class="menu-text">Add Employee</span>
+                </a>
+                <a href="addDepartment.html" class="nav-item">
+                    <span class="icon">🏢</span>
+                    <span class="menu-text">Create Department</span>
+                </a>
+            </div>
+            <div class="section">
+                <div class="welcome-section">
+
+                    <div class="profile-image">
+                        <img src="../images/demo.png" alt="employee" class="emp-image">
+                    </div>
+                    <div class="greeting">
+                        <h2>Welcome employee!!!</h2>
+                        <p id="greeting-message"></p>
+                    </div>
+
+                </div>
+                <div class="display-section">
+                    <h3>Latest added Employees</h3>
+                    <hr>
+                    <div class="tableEmployess">
+                        <table class="mytable">
+                            <tr>
+                                <th>Name</th>
+                                <th>Joining Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="login_footer">
+            <p>Copyright &copy</p>
+        </footer>
+
+    </div>
+    <script src="../javascript/script.js"></script>
+    <script src="../javascript/onLoad.js"></script>
+</body>
+
+</html>

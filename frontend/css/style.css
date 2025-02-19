@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.main {
+    display: flex;
+}
+
+.slogan-section {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    height: 100vh;
+    width: 50vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slogan-section h1 {
+    font-family: "Arimo", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(0, 0, 0);
+}
+
+.login-section {
+    background-color: rgb(15, 23, 42);
+    display: flex;
+    height: 100vh;
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    border-style: double;
+    border-color: rgba(0, 0, 0, 0.229);
+    border-radius: 5px;
+    background-color: rgba(77, 86, 109, 0.43);
+    height: 40vh;
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+    border-color: whitesmoke;
+}
+
+.login-form p {
+    padding-bottom: 2vh;
+}
+
+.login_header {
+    background-color: rgb(15, 23, 42);
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    justify-content: space-between;
+
+}
+
+.forgot-password-link {
+    text-decoration: none;
+    color: wheat;
+}
+
+.login_footer {
+    background-color: rgb(15, 23, 42);
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    justify-content: center;
+    color: white;
+    align-items: center;
+
+}
+
+.login_footer p {
+    color: white;
+}
+
+.logo-image {
+    background-color: beige;
+    margin: 1vh;
+    border-radius: 50%;
+    width: 5vw;
+    /* 10% of the viewport width */
+    height: auto;
+}
+
+.login-nav-bar {
+    color: white;
+    text-decoration: none;
+    display: flex;
+
+}
+
+.login-nav-bar ul {
+    display: flex;
+    color: white;
+    list-style: none;
+    margin-left: auto;
+    align-items: center;
+    text-decoration: none;
+
+}
+
+.login-nav-bar li a {
+    color: white;
+    text-decoration: none;
+}
+
+.login-nav-bar li {
+    margin: 0 10px;
+    /* Optional: Add some space between the list items */
+
+}
+
+
+.arimo-logo {
+    font-family: "Arimo", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: inherit;
+    align-items: center;
+    width: 80%;
+
+}
+
+.input-text {
+    margin-bottom: 5%;
+    height: 5vh;
+    width: 25vw;
+    border-radius: 5px;
+    border-color: rgba(0, 0, 0, 0.226);
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(15, 23, 42);
+}
+
+.register-section {
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 100%;
+    border-radius: 10px;
+    border-style: double;
+    border-color: whitesmoke;
+    background-color: rgba(77, 86, 109, 0.43)
+}
+
+.reg-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 50vw;
+
+}
+
+
+@media (width <=700px) {}
+
+@media only screen and (max-width: 600px) {
+    .main {
+
+        flex-direction: column;
+    }
+
+    .slogan-section {
+        display: none;
+    }
+
+    .login-section {
+        width: 100vw;
+    }
+
+    .login-form {
+        height: 40vh;
+        width: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .register-section {
+        height: 40vh;
+        width: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form {
+        width: 80%;
+    }
+
+    .input-text {
+        width: 100%;
+    }
+
+    .reg-body {
+        width: 90%;
+    }
+
+}

@@ -1,0 +1,367 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-bar {
+    display: flex;
+    background-color: rgb(15, 23, 42);
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 8%;
+    align-items: center;
+
+}
+
+.below-nav-bar {
+    display: flex;
+    height: 84%;
+    width: inherit
+}
+
+.search-bar {
+
+    height: 50%;
+    width: 30%;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+.logo-image {
+    background-color: beige;
+    margin: 1vh;
+    border-radius: 50%;
+    width: 5vw;
+    /* 10% of the viewport width */
+    height: 100%;
+}
+
+.side-bar {
+
+    height: 90vh;
+    width: 10%;
+    min-width: fit-content;
+    /* display: flex; */
+    flex-direction: column;
+    background-color: rgba(15, 23, 42, 0.977);
+    display: none;
+
+}
+
+.side-bar a {
+    text-decoration: none;
+    color: whitesmoke;
+
+    margin-bottom: 1vh;
+    padding: 1vh;
+
+}
+
+.side-bar a:hover {
+    text-decoration: none;
+    color:  rgb(15, 23, 42);
+    background-color: rgb(233, 225, 230);
+    padding: 1vh;
+    margin-bottom: 1vh;
+
+}
+
+.greeting{
+    display: flex;
+    flex-direction: column;
+}
+
+#welcome-section p {
+    display: block;
+    margin-top: 10px; /* Adds space */
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: whitesmoke;
+    margin-right: 2vw;
+
+}
+
+.section {
+    background-color: whitesmoke;
+    height: 90vh;
+    width: 100%;
+    min-width: fit-content;
+}
+
+.login_footer {
+    background-color: rgb(15, 23, 42);
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    justify-content: center;
+    color: white;
+    align-items: center;
+
+}
+
+.login_footer p {
+    color: white;
+}
+
+.emp-image {
+    margin: 2vh;
+    height: 15vh;
+    min-height: 5vh;
+    border-radius: 5px;
+}
+
+.welcome-section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(189, 187, 187, 0.203);
+
+}
+
+.welcome-section h2 {
+    font-family: "Arimo", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: x-large;
+    font-style: normal;
+    color: rgb(0, 0, 0);
+}
+
+.open-nav-button {
+    height: 4vh;
+    width: 2vw;
+}
+
+
+.display-section{
+    display: flex;
+    flex-direction: column;
+    margin-top:5vh;
+}
+
+.display-section h3{
+    font-family: "Arimo", serif;
+    align-self: center;
+}
+
+.tableEmployess{
+    display: flex;
+}
+
+.tableEmployess table{
+    table-layout: auto;
+    width: 100vw;
+}
+
+.tableEmployess table,th, td{
+   
+        border: 1px solid black;
+        border-collapse: collapse;   
+}
+
+.add-section{
+    display: flex;
+    flex-direction: column;
+    height:90vh;
+    width:100vw;
+    margin-top: 5vh;
+    align-content: center;
+    flex-wrap: wrap;
+
+}
+
+.addEmployeeForm{
+    display: flex;
+    flex-direction: column;
+    
+    height:fit-content;
+    max-width:80%;
+    border: 1px solid;
+    box-shadow: 2px 2px rgb(15, 23, 42);
+    border-radius: 2px;
+    padding: 2vw;
+   
+}
+
+.addEmployeeForm form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-heading{
+    font-family: "Arimo", serif;
+    font-size: x-large;
+    align-self: center;
+    padding-bottom: 5vh;
+}
+
+.form-group{
+    display: flex;
+    
+   
+}
+
+.form-group label{
+    width: 8vw;
+    padding: 0;
+    margin: 0;
+}
+
+.form-group input{
+   width: 50%;
+    height:4vh;
+   
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}
+
+.button button{ 
+    width:60%;
+    align-self: center;
+    height: 5vh;
+    border-radius: 5px;
+}
+
+.button button:hover{ 
+    width:60%;
+    align-self: center;
+    height: 5vh;
+    border-radius: 2px;
+    box-shadow: 1px 1px black;
+}
+
+.custom-dropdown {
+    position: relative;
+    width: 70%;
+    cursor: pointer;
+    border: 1px solid #0a00008b; /* Matches default input field */
+    padding: 6px;
+    margin-bottom: 2vh;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+.custom-dropdown .selected-text {
+    color:rgb(15, 23, 42);
+}
+
+.dropdown-list {
+    position: absolute;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+   
+   
+    display: none;
+    z-index: 10;
+}
+
+.dropdown-list option {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.form-group-1{
+    display: flex;
+    justify-content: space-evenly;
+    
+   
+}
+
+.form-group-1 label{
+    width: 50%;
+    padding: 0;
+    margin: 0;
+}
+
+.form-group-1 input{
+   width: 70%;
+    height:4vh;
+   
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+}
+
+
+.addDepartmentForm{
+    display: flex;
+    flex-direction: column;
+    
+    height:fit-content;
+    max-width:80%;
+    border: 1px solid;
+    box-shadow: 2px 2px rgb(15, 23, 42);
+    border-radius: 2px;
+    padding: 2vw;
+    width: 40%;
+   
+}
+
+.addDepartmentForm form{
+    display: flex;
+    flex-direction: column;
+}
+
+#address-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+#address {
+    /* width: 300px;
+    padding: 8px;
+    font-size: 16px; */
+    flex-grow: 1; /* Ensure the input takes the remaining space */
+    padding: 8px;
+    font-size: 16px;
+    position: relative;
+}
+
+
+#suggestions {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    background-color: white;
+    z-index: 9999; /* Ensure suggestions are above other content */
+    display: none; /* Hidden by default */
+    position: absolute; /* Position the dropdown below the input */
+    top: 100%; /* Place the dropdown directly below the input */
+    left: 0;
+    width: 100%; /* Match the width of the input */
+}
+
+#suggestions li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+#suggestions li:hover {
+    background-color: #f0f0f0;
+}
