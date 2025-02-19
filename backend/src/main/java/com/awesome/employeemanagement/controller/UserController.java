@@ -1,7 +1,7 @@
-package com.awesome.employeeManagement.controller;
+package com.awesome.employeemanagement.controller;
 
-import com.awesome.employeeManagement.model.Users;
-import com.awesome.employeeManagement.service.UserService;
+import com.awesome.employeemanagement.model.Users;
+import com.awesome.employeemanagement.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

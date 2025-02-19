@@ -1,4 +1,4 @@
-package com.awesome.employeeManagement.config;
+package com.awesome.employeemanagement.config;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

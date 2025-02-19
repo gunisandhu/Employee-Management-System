@@ -1,4 +1,4 @@
-package com.awesome.employeeManagement.controller;
+package com.awesome.employeemanagement.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.GetMapping;
