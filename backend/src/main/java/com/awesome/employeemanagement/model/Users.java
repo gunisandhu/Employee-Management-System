@@ -1,4 +1,4 @@
-package com.awesome.employeeManagement.model;
+package com.awesome.employeemanagement.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

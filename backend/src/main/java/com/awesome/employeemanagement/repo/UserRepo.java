@@ -1,6 +1,6 @@
-package com.awesome.employeeManagement.repo;
+package com.awesome.employeemanagement.repo;
 
-import com.awesome.employeeManagement.model.Users;
+import com.awesome.employeemanagement.model.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

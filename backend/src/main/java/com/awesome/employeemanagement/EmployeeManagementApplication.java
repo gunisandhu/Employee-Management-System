@@ -1,4 +1,4 @@
-package com.awesome.employeeManagement;
+package com.awesome.employeemanagement;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,7 +1,7 @@
-package com.awesome.employeeManagement.service;
+package com.awesome.employeemanagement.service;
 
-import com.awesome.employeeManagement.model.UserPrincipal;
-import com.awesome.employeeManagement.repo.UserRepo;
+import com.awesome.employeemanagement.model.UserPrincipal;
+import com.awesome.employeemanagement.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -1,4 +1,4 @@
-package com.awesome.employeeManagement.model;
+package com.awesome.employeemanagement.model;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
