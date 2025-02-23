@@ -2,8 +2,10 @@ package com.awesome.employeemanagement.controller;
 
 import com.awesome.employeemanagement.model.Users;
 import com.awesome.employeemanagement.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -17,7 +19,28 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<?> createUser(@RequestBody Users user) {
+    public ResponseEntity<?> createUser(@Valid @RequestBody Users user, BindingResult exception) {
+        System.out.println("Received user: " + user);
+        if (exception.hasErrors()) {
+            // Previously, we only returned a list of error messages without specifying the field names.
+// Keeping this here for reference, but we now use a map to associate each field with its corresponding error.
+//
+// var errors = exception.getAllErrors().stream()
+//         .map(DefaultMessageSourceResolvable::getDefaultMessage)
+//         .collect(Collectors.toList());
+//
+// Now, we return a map with field names and their respective errors.
+
+            Map<String, Object> errorResponse = new HashMap<>();
+            Map<String, String> fieldErrors = new HashMap<>();
+            exception.getFieldErrors().forEach(error ->
+                    fieldErrors.put(error.getField(), error.getDefaultMessage())
+
+            );
+            errorResponse.put("status", "error"); // Indicate an error occurred
+            errorResponse.put("errors", fieldErrors);
+            return ResponseEntity.badRequest().body(errorResponse);
+        }
         if (userService.checkUsernameDoesNotExists(user.getUsername())) {
             userService.createUser(user);
             Map<String, Object> response = new HashMap<>();
@@ -25,8 +48,10 @@ public class UserController {
             response.put("username", user.getUsername());
             return ResponseEntity.ok().body(response);
         }
-
-        return ResponseEntity.badRequest().body("Username already exist");
+        Map<String, Object> errorResponse = new HashMap<>();
+        errorResponse.put("status", "error");
+        errorResponse.put("username", "Username already exists");
+        return ResponseEntity.badRequest().body(errorResponse);
     }
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
