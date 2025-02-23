@@ -18,6 +18,17 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:latest
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: testdb
+          MYSQL_USER: testuser
+          MYSQL_PASSWORD: testpassword
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
     - uses: actions/checkout@v4
@@ -30,6 +41,12 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       working-directory: ./backend
+    - name: Run Tests
+      env:
+         SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/testdb
+         SPRING_DATASOURCE_USERNAME: testuser
+         SPRING_DATASOURCE_PASSWORD: testpassword
+      run: mvn test
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
