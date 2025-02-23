@@ -29,6 +29,7 @@ public class UserController {
         return ResponseEntity.badRequest().body("Username already exist");
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Users user) {
         var token = userService.verify(user);

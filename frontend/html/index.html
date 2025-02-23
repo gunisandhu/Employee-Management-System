@@ -21,16 +21,18 @@
         </div>
         <div class="login-section">
             <div class="login-form">
-                <form action="" method="post" class="form">
-                    <input type="email" name="userEmail" required placeholder="Enter Email" class="input-text">
-                    <input type="password" name="password" required placeholder="Password" class="input-text">
+                <form id="loginform" class="form">
+                    <input type="text" name="userEmail" required placeholder="Enter Email" class="input-text" id="username">
+                    <input type="password" name="password" required placeholder="Password" class="input-text" id="password">
                     <input type="submit" value="Sign In" class="input-text">
                     <p>Forgot Password? <a href="/forgot-password" class="forgot-password-link">Click here</a></p>
                     <p>Not a member? <a href="register.html" class="forgot-password-link">Register</a></p>
+                    <p id="loginMessage" style="color: red;"></p>
                 </form>
             </div>
         </div>
     </div>
+    <script src="../javascript/login.js"></script>
 </body>
 
 </html>
