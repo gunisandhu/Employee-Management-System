@@ -54,10 +54,10 @@ public class Users {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @NotBlank(message = "Phone number cannot be blank")
-    @Pattern(regexp = "^\\+?[0-9]{10,15}$", message = "Phone number must be valid (e.g., +1234567890)")
-    @Column(name = "phone_number", nullable = false)
-    private String phoneNumber;
+//    @NotBlank(message = "Phone number cannot be blank")
+//    @Pattern(regexp = "^\\+?[0-9]{10,15}$", message = "Phone number must be valid (e.g., +1234567890)")
+//    @Column(name = "phone_number", nullable = false)
+//    private String phoneNumber;
 
 
     public int getId() {
@@ -108,13 +108,13 @@ public class Users {
         this.lastName = lastName;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
+//    public String getPhoneNumber() {
+//        return phoneNumber;
+//    }
+//
+//    public void setPhoneNumber(String phoneNumber) {
+//        this.phoneNumber = phoneNumber;
+//    }
 
     @Override
     public String toString() {

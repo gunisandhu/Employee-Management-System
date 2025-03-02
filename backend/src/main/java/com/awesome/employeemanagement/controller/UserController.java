@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +19,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PostMapping("/register")
     public ResponseEntity<?> createUser(@Valid @RequestBody Users user, BindingResult exception) {
         System.out.println("Received user: " + user);
@@ -32,9 +34,9 @@ public class UserController {
 // Now, we return a map with field names and their respective errors.
 
             Map<String, Object> errorResponse = new HashMap<>();
-            Map<String, String> fieldErrors = new HashMap<>();
+            Map<String, List<String>> fieldErrors = new HashMap<>();
             exception.getFieldErrors().forEach(error ->
-                    fieldErrors.put(error.getField(), error.getDefaultMessage())
+                    fieldErrors.computeIfAbsent(error.getField(), k -> new ArrayList<>()).add(error.getDefaultMessage())
 
             );
             errorResponse.put("status", "error"); // Indicate an error occurred
